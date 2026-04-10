@@ -1,0 +1,69 @@
+{
+  "lastUpdated": "2026-04-10",
+  "events": [
+    {
+      "day": "04",
+      "month": "Apr",
+      "name": "Scoot GB – Southern",
+      "location": "Prevail Poole",
+      "description": "Have you got what it takes to qualify?",
+      "entry": "Register through SPOND",
+      "tags": ["scoot", "comp"]
+    },
+    {
+      "day": "11",
+      "month": "Apr",
+      "name": "Inter-group Competition",
+      "location": "Carvers Skatepark",
+      "description": "Professional judging, prizes and more. Time to show off what you have learnt.",
+      "entry": "Register through SPOND",
+      "tags": ["skate", "scoot", "comp"]
+    },
+    {
+      "day": "23",
+      "month": "May",
+      "name": "Verwood Skate Jam",
+      "location": "Potterne Park",
+      "description": "Coaching, bike stunts, music, prizes and stalls – a great day out for the whole family.",
+      "entry": "Free entry",
+      "tags": ["skate", "bmx", "scoot", "free"]
+    }
+  ],
+  "news": [
+    {
+      "category": "Sponsorship",
+      "title": "Blunt Envy x Youth Riders — Official Deal",
+      "date": "November 2025",
+      "body": "We have partnered with Blunt Envy. We can now sell Blunt Envy spares and complete scooters from our Spares & Repairs room at the parks.",
+      "accentColor": "var(--orange)"
+    },
+    {
+      "category": "Park Update",
+      "title": "Improvements Coming to Potterne Park",
+      "date": "November 2025",
+      "body": "Thanks to support from Dorset Council, we are making improvements at Potterne Park in Verwood.",
+      "accentColor": "var(--blue)"
+    },
+    {
+      "category": "Breaking News",
+      "title": "Youth Riders is now a Registered Charity",
+      "date": "April 2025",
+      "body": "Youth Riders CIO is now officially a registered charity (number 1212183).",
+      "accentColor": "var(--lime)"
+    }
+  ],
+  "sponsors": [
+    {
+      "name": "Blunt Envy",
+      "description": "Official scooter sponsor",
+      "tier": "gold",
+      "url": "https://www.bluenvy.com/"
+    },
+    {
+      "name": "Dorset Council",
+      "description": "Park improvements funding",
+      "tier": "silver",
+      "url": "https://www.dorsetcouncil.gov.uk/"
+    }
+  ]
+}
