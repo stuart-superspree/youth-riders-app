@@ -1040,58 +1040,8 @@ body {
         <button class="section-label-more" onclick="navTo('events')">All →</button>
       </div>
 
-      <div class="events-scroll">
-        <div class="event-card" onclick="openEventModal('Summer Jam Session','21 Jun 2026','Potterne Park, Verwood','Open session for all skill levels. Bring your board, scooter or BMX. Coaches on hand.','Free entry · All welcome')">
-          <div class="event-card-color" style="background:var(--lime)"></div>
-          <div class="event-card-body">
-            <div class="event-date-box">
-              <div class="event-day">21</div>
-              <div class="event-month">Jun</div>
-            </div>
-            <div class="event-name">Summer Jam Session</div>
-            <div class="event-loc">📍 Potterne Park, Verwood</div>
-            <div class="event-tag">Free · All Ages</div>
-          </div>
-        </div>
-
-        <div class="event-card" onclick="openEventModal('Ringwood Skate Comp','5 Jul 2026','Ringwood Skatepark','Annual competition across skateboarding, scooter and BMX categories. Prizes + trophies.','Register now · £5 entry')">
-          <div class="event-card-color" style="background:var(--orange)"></div>
-          <div class="event-card-body">
-            <div class="event-date-box">
-              <div class="event-day">05</div>
-              <div class="event-month">Jul</div>
-            </div>
-            <div class="event-name">Ringwood Skate Comp</div>
-            <div class="event-loc">📍 Ringwood Skatepark</div>
-            <div class="event-tag">Competition</div>
-          </div>
-        </div>
-
-        <div class="event-card" onclick="openEventModal('Learn to Ride Day','19 Jul 2026','Potterne Park, Verwood','Beginner sessions for skateboarding and scootering. Qualified coaches, equipment loan available.','Free · Book ahead')">
-          <div class="event-card-color" style="background:var(--blue)"></div>
-          <div class="event-card-body">
-            <div class="event-date-box">
-              <div class="event-day">19</div>
-              <div class="event-month">Jul</div>
-            </div>
-            <div class="event-name">Learn to Ride Day</div>
-            <div class="event-loc">📍 Potterne Park, Verwood</div>
-            <div class="event-tag">Beginner Friendly</div>
-          </div>
-        </div>
-
-        <div class="event-card" onclick="openEventModal('BMX Showdown','2 Aug 2026','Ringwood Skatepark','BMX focused event with street and park sections. Film comp running all day.','£3 entry · All levels')">
-          <div class="event-card-color" style="background:var(--red)"></div>
-          <div class="event-card-body">
-            <div class="event-date-box">
-              <div class="event-day">02</div>
-              <div class="event-month">Aug</div>
-            </div>
-            <div class="event-name">BMX Showdown</div>
-            <div class="event-loc">📍 Ringwood Skatepark</div>
-            <div class="event-tag">BMX · Film Comp</div>
-          </div>
-        </div>
+      <div class="events-scroll" id="eventsScroll">
+        <!-- populated by renderHomeEvents() from data.json -->
       </div>
 
       <!-- News -->
@@ -1099,34 +1049,8 @@ body {
         <span class="section-label-text">Latest News</span>
         <div class="section-label-line"></div>
       </div>
-      <div class="news-list">
-        <div class="news-card fade-in" onclick="openModal('Blunt Envy Partnership 🤙','We have partnered with Blunt Envy — one of the most respected scooter brands in the game. This means we can now sell Blunt Envy spares and complete scooters from our Spares &amp; Repairs room at the parks. This is a huge win for the community.')">
-          <div class="news-card-accent" style="background:var(--orange)"></div>
-          <div class="news-card-body">
-            <div class="news-cat">Sponsorship</div>
-            <div class="news-title">Blunt Envy x Youth Riders — Official Deal</div>
-            <div class="news-date">November 2025</div>
-          </div>
-          <div class="news-card-arrow">›</div>
-        </div>
-        <div class="news-card fade-in" onclick="openModal('Potterne Park Upgrades 🛹','Thanks to support from Dorset Council, we are making improvements at Potterne Park in Verwood. New obstacles and resurfacing are planned — watch this space for the full reveal.')">
-          <div class="news-card-accent" style="background:var(--blue)"></div>
-          <div class="news-card-body">
-            <div class="news-cat">Park Update</div>
-            <div class="news-title">Improvements Coming to Potterne Park</div>
-            <div class="news-date">November 2025</div>
-          </div>
-          <div class="news-card-arrow">›</div>
-        </div>
-        <div class="news-card fade-in" onclick="openModal('We are a Registered Charity! 🎉','Youth Riders CIO is now officially a registered charity (number 1212183). This means every donation, every session, every event contributes to a proper charitable mission: giving young people in Ringwood and Verwood somewhere to ride, grow and belong.')">
-          <div class="news-card-accent" style="background:var(--lime)"></div>
-          <div class="news-card-body">
-            <div class="news-cat">Breaking News</div>
-            <div class="news-title">Youth Riders is now a Registered Charity</div>
-            <div class="news-date">April 2025</div>
-          </div>
-          <div class="news-card-arrow">›</div>
-        </div>
+      <div class="news-list" id="newsList">
+        <!-- populated by renderNews() from data.json -->
       </div>
 
       <!-- Quick Actions -->
@@ -1408,31 +1332,8 @@ body {
         <div class="section-label-line"></div>
       </div>
 
-      <div class="sponsors-strip">
-        <div class="sponsor-row" onclick="openModal('Blunt Envy 🛴','Blunt Envy are one of the most respected scooter brands in the world. Their sponsorship of Youth Riders means we can now stock and sell their complete scooters and spare parts at our parks. An incredible partnership for our community.')">
-          <div class="sponsor-logo-box">BLUNT<br>ENVY</div>
-          <div class="sponsor-info">
-            <div class="sponsor-name">Blunt Envy</div>
-            <div class="sponsor-desc">Official scooter sponsor</div>
-          </div>
-          <div class="sponsor-tier tier-gold">Gold</div>
-        </div>
-        <div class="sponsor-row" onclick="openModal('Dorset Council 🏛️','Dorset Council have provided invaluable support for improvements at Potterne Park in Verwood. Their backing is helping us create a better riding environment for the whole community.')">
-          <div class="sponsor-logo-box">DORSET<br>COUNCIL</div>
-          <div class="sponsor-info">
-            <div class="sponsor-name">Dorset Council</div>
-            <div class="sponsor-desc">Park improvements funding</div>
-          </div>
-          <div class="sponsor-tier tier-silver">Silver</div>
-        </div>
-        <div class="sponsor-row" onclick="openModal('Become a Sponsor 💚','Want to support Youth Riders? We are always looking for local businesses and organisations to partner with. Sponsorship helps us maintain our parks, run events and keep everything free for young people.\n\nGet in touch: chair@youth-riders.org.uk')">
-          <div class="sponsor-logo-box" style="color:var(--grey)">YOUR<br>LOGO</div>
-          <div class="sponsor-info">
-            <div class="sponsor-name">Become a Sponsor</div>
-            <div class="sponsor-desc">Support the community · Get in touch</div>
-          </div>
-          <div class="sponsor-tier tier-partner">Open</div>
-        </div>
+      <div class="sponsors-strip" id="sponsorsList">
+        <!-- populated by renderSponsors() from data.json -->
       </div>
 
       <div style="padding: 8px 16px 24px">
@@ -1496,30 +1397,229 @@ body {
 <div class="toast" id="toast"></div>
 
 <script>
-// ── SPLASH ──
+
+// ═══════════════════════════════════════════════════════
+// DATA — loaded from data.json, with hardcoded fallback
+// ═══════════════════════════════════════════════════════
+
+const FALLBACK_DATA = {
+  lastUpdated: '2026-04-10',
+  events: [
+    { day:'04', month:'Apr', name:'Scoot GB – Southern', location:'Prevail Poole', description:'Have you got what it takes to qualify?', entry:'Register through SPOND', tags:['scoot','comp'] },
+    { day:'11', month:'Apr', name:'Inter-group Competition', location:'Carvers Skatepark', description:'Professional judging, prizes and more. Time to show off what you have learnt.', entry:'Register through SPOND', tags:['skate','scoot','comp'] },
+    { day:'23', month:'May', name:'Verwood Skate Jam', location:'Potterne Park', description:'Coaching, bike stunts, music, prizes and stalls – a great day out for the whole family.', entry:'Free entry', tags:['skate','bmx','scoot','free'] }
+  ],
+  news: [
+    { category:'Sponsorship', title:'Blunt Envy x Youth Riders — Official Deal', date:'November 2025', body:'We have partnered with Blunt Envy. We can now sell Blunt Envy spares and complete scooters from our Spares & Repairs room at the parks.', accentColor:'var(--orange)' },
+    { category:'Park Update', title:'Improvements Coming to Potterne Park', date:'November 2025', body:'Thanks to support from Dorset Council, we are making improvements at Potterne Park in Verwood.', accentColor:'var(--blue)' },
+    { category:'Breaking News', title:'Youth Riders is now a Registered Charity', date:'April 2025', body:'Youth Riders CIO is now officially a registered charity (number 1212183).', accentColor:'var(--lime)' }
+  ],
+  sponsors: [
+    { name:'Blunt Envy', description:'Official scooter sponsor', tier:'gold', url:'https://www.bluenvy.com/' },
+    { name:'Dorset Council', description:'Park improvements funding', tier:'silver', url:'https://www.dorsetcouncil.gov.uk/' }
+  ]
+};
+
+let appData = FALLBACK_DATA;
+
+// ═══════════════════════════════════════════════════════
+// SPLASH & INIT
+// ═══════════════════════════════════════════════════════
+
 function enterApp() {
   document.getElementById('splash').classList.add('out');
-  const app = document.getElementById('app');
-  app.classList.add('visible');
+  document.getElementById('app').classList.add('visible');
   setTimeout(() => initApp(), 200);
 }
 
 async function initApp() {
+  // Try to load fresh data from data.json
   try {
-    const res = await fetch('data.json');
-    const data = await res.json();
-    window.appData = data;
-  } catch(e) {
-    // falls back to hardcoded content if fetch fails
-    console.warn('Could not load data.json, using defaults');
+    const res = await fetch('data.json?v=' + Date.now());
+    if (res.ok) {
+      const json = await res.json();
+      appData = json;
+      console.log('✓ Loaded data.json —', json.lastUpdated);
+    }
+  } catch (e) {
+    console.warn('data.json not found, using fallback data');
   }
+
+  // Render all dynamic sections
+  renderHomeEvents();
   renderEventsList('all');
   renderNews();
   renderSponsors();
   initScrollObserver();
 }
 
-// ── NAV ──
+// ═══════════════════════════════════════════════════════
+// TAG HELPERS
+// ═══════════════════════════════════════════════════════
+
+const tagColors = { skate:'etag-skate', bmx:'etag-bmx', scoot:'etag-scoot', free:'etag-free', comp:'etag-comp' };
+const tagLabels = { skate:'Skateboarding', bmx:'BMX', scoot:'Scooter', free:'Free', comp:'Competition' };
+
+const cardAccentColors = ['var(--lime)','var(--orange)','var(--blue)','var(--red)','#B47AFF'];
+
+function safeText(str) {
+  // Escape single quotes for inline onclick handlers
+  return (str || '').replace(/'/g, '&#39;');
+}
+
+// ═══════════════════════════════════════════════════════
+// HOME SCREEN — horizontal events scroll (first 4)
+// ═══════════════════════════════════════════════════════
+
+function renderHomeEvents() {
+  const container = document.getElementById('eventsScroll');
+  if (!container) return;
+  const events = appData.events.slice(0, 4);
+
+  if (events.length === 0) {
+    container.innerHTML = '<div style="padding:16px;font-family:var(--font-ui);color:var(--grey);font-size:13px">No upcoming events — check back soon.</div>';
+    return;
+  }
+
+  container.innerHTML = events.map((e, i) => {
+    const color = cardAccentColors[i % cardAccentColors.length];
+    const tagLabel = e.tags && e.tags.length ? (e.tags.includes('free') ? 'Free Entry' : e.tags.includes('comp') ? 'Competition' : e.tags[0].charAt(0).toUpperCase() + e.tags[0].slice(1)) : '';
+    return `
+    <div class="event-card" onclick="openEventModal('${safeText(e.name)}','${e.day} ${e.month}','${safeText(e.location)}','${safeText(e.description)}','${safeText(e.entry)}')">
+      <div class="event-card-color" style="background:${color}"></div>
+      <div class="event-card-body">
+        <div class="event-date-box">
+          <div class="event-day">${e.day}</div>
+          <div class="event-month">${e.month}</div>
+        </div>
+        <div class="event-name">${e.name}</div>
+        <div class="event-loc">📍 ${e.location}</div>
+        ${tagLabel ? `<div class="event-tag">${tagLabel}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+// EVENTS SCREEN — full filterable list
+// ═══════════════════════════════════════════════════════
+
+function renderEventsList(filter) {
+  const list = document.getElementById('eventsList');
+  if (!list) return;
+  const events = appData.events;
+  const filtered = filter === 'all' ? events : events.filter(e => e.tags && e.tags.includes(filter));
+
+  if (filtered.length === 0) {
+    list.innerHTML = '<div style="padding:24px 16px;font-family:var(--font-ui);color:var(--grey);font-size:14px">No events in this category right now.</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(e => `
+    <div class="event-full-card" onclick="openEventModal('${safeText(e.name)}','${e.day} ${e.month}','${safeText(e.location)}','${safeText(e.description)}','${safeText(e.entry)}')">
+      <div class="event-full-top">
+        <div class="event-full-date">
+          <div class="efd-day">${e.day}</div>
+          <div class="efd-month">${e.month}</div>
+        </div>
+        <div class="event-full-info">
+          <div class="event-full-name">${e.name}</div>
+          <div class="event-full-detail">📍 ${e.location}<br>${e.entry}</div>
+        </div>
+      </div>
+      <div class="event-full-tags">
+        ${(e.tags || []).map(t => `<div class="etag ${tagColors[t] || ''}">${tagLabels[t] || t}</div>`).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterEvents(el, filter) {
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  renderEventsList(filter);
+}
+
+function openEventModal(name, date, loc, desc, entry) {
+  openModal(name, `📅 ${date}\n📍 ${loc}\n\n${desc}\n\n${entry}`);
+}
+
+// ═══════════════════════════════════════════════════════
+// HOME SCREEN — news cards
+// ═══════════════════════════════════════════════════════
+
+function renderNews() {
+  const list = document.getElementById('newsList');
+  if (!list) return;
+  const news = appData.news;
+
+  if (!news || news.length === 0) {
+    list.innerHTML = '<div style="padding:16px;font-family:var(--font-ui);color:var(--grey);font-size:13px">No news items yet.</div>';
+    return;
+  }
+
+  list.innerHTML = news.map(n => `
+    <div class="news-card fade-in" onclick="openModal('${safeText(n.title)}','${safeText(n.body)}')">
+      <div class="news-card-accent" style="background:${n.accentColor || 'var(--grey)'}"></div>
+      <div class="news-card-body">
+        <div class="news-cat">${n.category}</div>
+        <div class="news-title">${n.title}</div>
+        <div class="news-date">${n.date}</div>
+      </div>
+      <div class="news-card-arrow">›</div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+// DONATE SCREEN — sponsors list
+// ═══════════════════════════════════════════════════════
+
+function renderSponsors() {
+  const list = document.getElementById('sponsorsList');
+  if (!list) return;
+  const sponsors = appData.sponsors || [];
+
+  const tierClass = { gold:'tier-gold', silver:'tier-silver', partner:'tier-partner' };
+  const tierLabel = { gold:'Gold', silver:'Silver', partner:'Partner' };
+
+  // Build initials from sponsor name for the logo box
+  const initials = name => name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0,6);
+  // Break into two lines for display
+  const logoText = name => {
+    const words = name.split(' ');
+    return words.length > 1 ? words[0] + '<br>' + words.slice(1).join(' ') : name;
+  };
+
+  const sponsorHTML = sponsors.map(s => `
+    <div class="sponsor-row" onclick="window.open('${s.url || '#'}','_blank')">
+      <div class="sponsor-logo-box">${logoText(s.name)}</div>
+      <div class="sponsor-info">
+        <div class="sponsor-name">${s.name}</div>
+        <div class="sponsor-desc">${s.description}</div>
+      </div>
+      <div class="sponsor-tier ${tierClass[s.tier] || 'tier-partner'}">${tierLabel[s.tier] || 'Partner'}</div>
+    </div>
+  `).join('');
+
+  // Always append the static "Become a Sponsor" row
+  const becomeHTML = `
+    <div class="sponsor-row" onclick="openModal('Become a Sponsor 💚','Want to support Youth Riders? We are always looking for local businesses and organisations to partner with.\\n\\nGet in touch: chair@youth-riders.org.uk')">
+      <div class="sponsor-logo-box" style="color:var(--grey)">YOUR<br>LOGO</div>
+      <div class="sponsor-info">
+        <div class="sponsor-name">Become a Sponsor</div>
+        <div class="sponsor-desc">Support the community · Get in touch</div>
+      </div>
+      <div class="sponsor-tier tier-partner">Open</div>
+    </div>`;
+
+  list.innerHTML = sponsorHTML + becomeHTML;
+}
+
+// ═══════════════════════════════════════════════════════
+// NAV
+// ═══════════════════════════════════════════════════════
+
 function navTo(screen) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
@@ -1536,52 +1636,10 @@ function triggerAweFlash() {
   el.classList.add('fire');
 }
 
-// ── EVENTS ──
-const eventsData = [
-  { day:'21', month:'Jun', name:'Summer Jam Session', loc:'Potterne Park, Verwood', time:'12:00 – 17:00', tags:['free','skate','scoot'], desc:'Open session for all skill levels. Coaches on hand. Bring your board, scooter or BMX.', entry:'Free entry · All welcome' },
-  { day:'05', month:'Jul', name:'Ringwood Skate Comp', loc:'Ringwood Skatepark', time:'10:00 – 16:00', tags:['comp','skate','bmx','scoot'], desc:'Annual competition across skateboarding, scooter and BMX categories. Prizes and trophies for top 3 in each class.', entry:'£5 entry · Register on the door' },
-  { day:'19', month:'Jul', name:'Learn to Ride Day', loc:'Potterne Park, Verwood', time:'10:00 – 14:00', tags:['free','skate','scoot'], desc:'Qualified coaches run structured beginner sessions. Equipment loan available. Perfect for complete beginners aged 8+.', entry:'Free · Book in advance' },
-  { day:'02', month:'Aug', name:'BMX Showdown', loc:'Ringwood Skatepark', time:'11:00 – 18:00', tags:['comp','bmx'], desc:'BMX focused event with street and park sections. Film competition running all day — best clip wins.', entry:'£3 entry · All levels' },
-  { day:'16', month:'Aug', name:'Summer Send-Off Jam', loc:'Potterne Park, Verwood', time:'13:00 – 19:00', tags:['free','skate','bmx','scoot'], desc:'End of summer session — all disciplines, all ages. BBQ, music and good vibes. See you there.', entry:'Free entry · All welcome' },
-  { day:'06', month:'Sep', name:'Autumn Skills Sessions', loc:'Ringwood Skatepark', time:'10:00 – 15:00', tags:['skate','scoot'], desc:'Weekly coached sessions start again for autumn. Ideal for anyone wanting to push their riding to the next level.', entry:'£3 per session' },
-];
+// ═══════════════════════════════════════════════════════
+// MODAL
+// ═══════════════════════════════════════════════════════
 
-const tagColors = { skate:'etag-skate', bmx:'etag-bmx', scoot:'etag-scoot', free:'etag-free', comp:'etag-comp' };
-const tagLabels = { skate:'Skateboarding', bmx:'BMX', scoot:'Scooter', free:'Free', comp:'Competition' };
-
-function renderEventsList(filter) {
-  const list = document.getElementById('eventsList');
-  const filtered = filter === 'all' ? eventsData : eventsData.filter(e => e.tags.includes(filter));
-  list.innerHTML = filtered.map(e => `
-    <div class="event-full-card" onclick="openEventModal('${e.name}','${e.day} ${e.month} 2026','${e.loc}','${e.desc}','${e.entry}')">
-      <div class="event-full-top">
-        <div class="event-full-date">
-          <div class="efd-day">${e.day}</div>
-          <div class="efd-month">${e.month}</div>
-        </div>
-        <div class="event-full-info">
-          <div class="event-full-name">${e.name}</div>
-          <div class="event-full-detail">📍 ${e.loc}<br>⏰ ${e.time}<br>${e.entry}</div>
-        </div>
-      </div>
-      <div class="event-full-tags">
-        ${e.tags.map(t => `<div class="etag ${tagColors[t]}">${tagLabels[t]}</div>`).join('')}
-      </div>
-    </div>
-  `).join('');
-}
-
-function filterEvents(el, filter) {
-  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-  el.classList.add('active');
-  renderEventsList(filter);
-}
-
-function openEventModal(name, date, loc, desc, entry) {
-  openModal(name, `📅 ${date}\n📍 ${loc}\n\n${desc}\n\n${entry}`);
-}
-
-// ── MODAL ──
 function openModal(title, body) {
   document.getElementById('modalTitle').textContent = title;
   document.getElementById('modalBody').innerHTML = body.replace(/\n/g,'<br>');
@@ -1596,7 +1654,10 @@ function closeModalOnBg(e) {
   if (e.target === document.getElementById('modalOverlay')) closeModal();
 }
 
-// ── DONATE ──
+// ═══════════════════════════════════════════════════════
+// DONATE
+// ═══════════════════════════════════════════════════════
+
 let selectedAmt = null;
 
 function selectAmt(el, val) {
@@ -1613,23 +1674,25 @@ function selectAmt(el, val) {
 function donateTap() {
   const custom = document.getElementById('customAmt').value;
   const amt = custom ? `£${custom}` : (selectedAmt ? `£${selectedAmt}` : null);
-  if (!amt) {
-    showToast('Please select or enter an amount');
-    return;
-  }
+  if (!amt) { showToast('Please select or enter an amount'); return; }
   triggerAweFlash();
-  // redirect to official page
   window.open('https://youth-riders.org.uk/donate-now/', '_blank');
   showToast(`Donating ${amt} — thank you! 💚`);
 }
 
-// ── SHOP ──
+// ═══════════════════════════════════════════════════════
+// SHOP
+// ═══════════════════════════════════════════════════════
+
 function openShop() {
   window.open('https://youth-riders.org.uk/', '_blank');
   showToast('Opening Youth Riders shop…');
 }
 
-// ── TOAST ──
+// ═══════════════════════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════════════════════
+
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -1637,7 +1700,10 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2800);
 }
 
-// ── SCROLL OBSERVER ──
+// ═══════════════════════════════════════════════════════
+// SCROLL OBSERVER
+// ═══════════════════════════════════════════════════════
+
 function initScrollObserver() {
   const els = document.querySelectorAll('.fade-in');
   const obs = new IntersectionObserver(entries => {
