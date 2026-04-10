@@ -1504,8 +1504,18 @@ function enterApp() {
   setTimeout(() => initApp(), 200);
 }
 
-function initApp() {
+async function initApp() {
+  try {
+    const res = await fetch('data.json');
+    const data = await res.json();
+    window.appData = data;
+  } catch(e) {
+    // falls back to hardcoded content if fetch fails
+    console.warn('Could not load data.json, using defaults');
+  }
   renderEventsList('all');
+  renderNews();
+  renderSponsors();
   initScrollObserver();
 }
 
