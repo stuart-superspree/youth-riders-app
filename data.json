@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-10",
+  "lastUpdated": "2026-04-13",
   "events": [
     {
       "day": "11",
@@ -7,9 +7,11 @@
       "name": "Inter-group Competition",
       "location": "Carvers Skatepark",
       "description": "Inter-group competition with professional judging, prizes and more. Time to show off what you have learnt.",
-      "entry": "Register required",
+      "entry": "Register to enter",
       "tags": [
+        "skate",
         "scoot",
+        "bmx",
         "comp"
       ]
     }
